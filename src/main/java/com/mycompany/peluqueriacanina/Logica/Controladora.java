@@ -5,6 +5,7 @@
 package com.mycompany.peluqueriacanina.Logica;
 
 import com.mycompany.peluqueriacanina.Persistencia.ControladoraPersistencia;
+import java.util.List;
 
 
 public class Controladora {
@@ -36,6 +37,55 @@ public class Controladora {
         
         
     }
+
+    public  List<Mascota>  traerMascotas() {
+        return controlpersis.traerMascotas();
+    }
+
+    public void borrarMascota(int num_cliente) {
+        controlpersis.borrarMascota(num_cliente);
+    }
+
+    public void editarMascota(int num_cliente) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Mascota traerMascota(int num_cliente) {
+        return controlpersis.traerMascota(num_cliente);
+    }
+
+    public void modificarMascota(Mascota mascota, String nombre, String raza, String color, String nomDuenio, String celDuenio, String observaciones, String alergico, String atencion) {
+        mascota.setNombre(nombre);
+        mascota.setRaza(raza);
+        mascota.setColor(color);
+        mascota.setAtencion(atencion);
+        mascota.setAlergico(alergico);
+        mascota.setObservaciones(observaciones);
+        
+        //modificamos la mascota 
+        controlpersis.modificarMascota(mascota);
+        
+        //seteamos los nuevos valores del duenio
+        Duenio duenio = this.buscarDuenio(mascota.getDuenio().getId());
+        duenio.setCelDueño(celDuenio);
+        duenio.setNombre(nomDuenio);
+        
+        
+        //llamar a modificar dueño 
+        
+        this.modificarDuenio(duenio);
+        
+    }
+
+    private Duenio buscarDuenio(int id) {
+        return controlpersis.traerDuenio(id);
+    }
+
+    private void modificarDuenio(Duenio duenio) {
+        controlpersis.modificarDuenio(duenio);
+    }
+
+    
     
     
     

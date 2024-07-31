@@ -5,7 +5,7 @@
     <class>com.mycompany.peluqueriacanina.Logica.Duenio</class>
     <class>com.mycompany.peluqueriacanina.Logica.Mascota</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/peluqueriacanina?serverTimeZone=UTC"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/peluqueriacanina?serverTimeZone = UTC"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
       <property name="javax.persistence.jdbc.password" value=""/>

@@ -16,7 +16,10 @@ import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-
+/**
+ *
+ * @author Usuario
+ */
 public class MascotaJpaController implements Serializable {
 
     public MascotaJpaController(EntityManagerFactory emf) {
